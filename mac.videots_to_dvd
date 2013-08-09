@@ -1,0 +1,12 @@
+#!/bin/bash
+# # # Make DVD from VIDEO_TS # # #
+
+OUTPUT_FOLDER=
+OUTPUT_NAME=
+SOURCE_FOLDER=
+
+#hdiutil makehybrid -udf -udf-volume-name "DVD_NAME" -o "MY_DVD.iso" "/path/to/VIDEO_TS/parent/folder"
+
+hdiutil makehybrid -udf -udf-volume-name "${OUTPUT_NAME}" -o "${OUTPUT_NAME}".iso "${SOURCE_FOLDER}"
+
+hdiutil burn "${OUTPUT_FOLDER}"/"${OUTPUT_NAME}"
