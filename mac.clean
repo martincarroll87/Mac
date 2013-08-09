@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Mac Clean
+
+sudo rm -rf ~/Library/Caches/*
+sudo rm -rf ~/Library/Logs/*
+
+# OS X Mountain Lion or Lion
+#sudo killall -HUP mDNSResponder
+
+#Mac OS X v10.6
+sudo dscacheutil -flushcache
