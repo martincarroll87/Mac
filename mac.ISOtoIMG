@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# # # Convert ISO to IMG for use on USB drive # # #
+
+	ISO="ubuntu-12.04.2-desktop-amd64.iso"
+	IMG="ubuntu-12.04.2-desktop-amd64.img"
+	DISK="/dev/disk1"
+
+hdiutil convert -format UDRW -o "${IMG}" "${ISO}"
+
+diskutil list
+
+diskutil unmountDisk "${DISK}"
+
+#ridsk instead of disk can be faster
+dd if="${IMG}" of=/dev/rdisk1 bs=1m
+
+diskutil eject "${DISK}"
